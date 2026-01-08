@@ -1,6 +1,6 @@
 replicaCount: 2
 image:
-  tag: stable
+  tag: stable-alpine
 ingress:
   enabled: true
   host: staging.sample.local
