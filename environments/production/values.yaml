@@ -2,7 +2,7 @@ replicaCount: 4
 image:
   tag: latest
 ingress:
-  enabled: true
+  enabled: "true"
   className: "nginx"
   annotations: 
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
