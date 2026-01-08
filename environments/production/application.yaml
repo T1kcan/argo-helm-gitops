@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/T1kcan/argo-helm-gitops.git
+    targetRevision: main
+    path: charts/sample-app
+    helm:
+      valueFiles:
+        - ../../environments/production/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
