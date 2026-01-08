@@ -15,4 +15,9 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
-
+hpa:
+  enabled: true
+  minReplicas: 4
+  maxReplicas: 12
+  cpu:
+    targetAverageUtilization: 70
