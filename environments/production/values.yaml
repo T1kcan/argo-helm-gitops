@@ -2,15 +2,11 @@ replicaCount: 4
 image:
   tag: latest
 ingress:
-  ingress.className: nginx
   enabled: true
-  host: sample.company.com
-ingress:
-  enabled: false
   className: "nginx"
-    #annotations: 
-    #nginx.ingress.kubernetes.io/backend-protocol: HTTPS
-    #nginx.ingress.kubernetes.io/ssl-redirect: true
+  annotations: 
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/ssl-redirect: true
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
