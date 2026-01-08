@@ -2,5 +2,19 @@ replicaCount: 4
 image:
   tag: latest
 ingress:
+  ingress.className: nginx
   enabled: true
   host: sample.company.com
+ingress:
+  enabled: false
+  className: "nginx"
+  annotations: {}
+    kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: sample.company.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
