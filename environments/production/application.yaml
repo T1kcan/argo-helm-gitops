@@ -17,7 +17,7 @@ spec:
     namespace: production
   syncPolicy:
     automated:
-      prune: truespec:
+      prune: true
   strategy:
     canary:
       analysis:
